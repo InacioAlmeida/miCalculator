@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fundo {
+    background-color: rgb(179, 11, 179);
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/*
+#######################################################################
+====================Elementos da calculadora====================
+#######################################################################
+*/
+.calculadora {
+    position: absolute;
+    background-color: rgba(0,0,0,0.91);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    padding: 15px;
+    height: 700px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 3px solid red;
+}
+
+.calculadora h2 {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+table {
+    border-spacing: 8px;
+}
+
+.botao {
+    width: 65px;
+    height: 50px;
+    font-size: 22px; /*tamanho de cada caractere*/
+    cursor: pointer; /*quando passar o mouse troca o ponteiro*/
+    background-color: rgb(31,31,31); /*cor do fundo de cada botao*/
+    border:none; /*linha da borda*/
+    border-radius: 10px; /*borda de cada botazinho*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    font-size: 22px;
+    transform: scaleX(1.2);
+}
+
+.numero {
+    color: #fff;
+}
+
+.operador {
+    color: #FF5C00
+}
+
+.numero:hover {
+    background-color: #FF5C00;
+    box-shadow: 0 0 10px #FF5C00, 
+                0 0 20px #FF5C00, 
+                0 0 40px #FF5C00;
+}
+
+.operador:hover {
+    color:#fff;
+    background-color: #FF5C00;
+    box-shadow: 0 0 8px #FF5C00, 
+                0 0 16px #FF5C00, 
+                0 0 32px #FF5C00;
+}
+
+#telinha {
+    min-height: 35px;
+    max-width: 275px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    margin: 7px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    margin-top: 285px;
+}
