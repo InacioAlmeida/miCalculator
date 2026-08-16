@@ -1,3 +1,55 @@
+/* ============================================================
+                            VARIÁVEIS
+   ============================================================ */
+:root {
+    --laranja-neon: #FF5C00;
+    --texto: #fff;
+    --fundo-botao: rgb(31,31,31);
+    --calculadora: rgba(0,0,0,91);
+}
+
+.darkmode {
+    --laranja-neon: #FF5C00;
+    --texto: #000;
+    --fundo-botao: rgb(224,224,224);
+    --calculadora: rgba(256,256,256,91);
+}
+
+/* ============================================================
+                        Trocar tema
+   ============================================================ */
+#trocar-tema {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+}
+
+#trocar-tema svg{
+    fill: var(--fundo-botao);
+}
+#trocar-tema svg:last-child {
+    display: none;
+}
+.darkmode #trocar-tema svg:first-child {
+    display: none;
+} 
+.darkmode #trocar-tema svg:last-child {
+    display: block;
+}
+
+/* ============================================================
+                        FIM Trocar tema
+   ============================================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,12 +70,12 @@
 */
 .calculadora {
     position: absolute;
-    background-color: rgba(0,0,0,0.91);
+    background-color: var(--calculadora);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     height: 700px;
     box-sizing: border-box;
 
@@ -33,16 +85,29 @@
     border: 3px solid red;
 }
 
-.calculadora h2 {
+.cabecalho {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+.cabecalho h2 {
     font-size: 20px;
-    display: inline-block;
-    margin-right: 10px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--texto)
 }
 
+.cabecalho span {
+    font-size: 20px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--texto)
+}
+
+
 table {
-    border-spacing: 8px;
+    border-spacing: 8px 10px;
 }
 
 .botao {
@@ -50,10 +115,10 @@ table {
     height: 50px;
     font-size: 22px; /*tamanho de cada caractere*/
     cursor: pointer; /*quando passar o mouse troca o ponteiro*/
-    background-color: rgb(31,31,31); /*cor do fundo de cada botao*/
+    background-color: var(--fundo-botao); /*cor do fundo de cada botao*/
     border:none; /*linha da borda*/
     border-radius: 10px; /*borda de cada botazinho*/
-
+    color: var(--texto);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,26 +130,27 @@ table {
 }
 
 .numero {
-    color: #fff;
+    color: var(--texto);
 }
 
 .operador {
-    color: #FF5C00
+    color: var(--laranja-neon)
 }
 
 .numero:hover {
-    background-color: #FF5C00;
-    box-shadow: 0 0 10px #FF5C00, 
-                0 0 20px #FF5C00, 
-                0 0 40px #FF5C00;
+    color: var(--texto);
+    background-color: var(--laranja-neon);
+    box-shadow: 0 0 8px var(--laranja-neon), 
+                0 0 16px var(--laranja-neon), 
+                0 0 32px var(--laranja-neon);
 }
 
 .operador:hover {
-    color:#fff;
-    background-color: #FF5C00;
-    box-shadow: 0 0 8px #FF5C00, 
-                0 0 16px #FF5C00, 
-                0 0 32px #FF5C00;
+    color:var(--texto);
+    background-color: var(--laranja-neon);
+    box-shadow: 0 0 8px var(--laranja-neon), 
+                0 0 16px var(--laranja-neon), 
+                0 0 32px var(--laranja-neon);
 }
 
 #telinha {
@@ -92,7 +158,7 @@ table {
     max-width: 275px;
     font-size: 25px;
     font-weight: bold;
-    color: white;
+    color: var(--texto);
     text-align: right;
     margin: 7px;
     padding: 5px;
